@@ -1,5 +1,4 @@
-#!/usr/bin/env python3
-#Mycode
+# Mycode
 I am learning pyhton. This repo is going to be how I learn to code like a robot.
 
 ## Running the tests
