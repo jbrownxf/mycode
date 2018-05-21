@@ -1,0 +1,2 @@
+# mycode
+Learning Pyhton
