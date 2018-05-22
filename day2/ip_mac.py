@@ -3,14 +3,14 @@
 
 #request for user addresses
 print('What is your ip address?')
-IP= input()
+JIP= input()
 
 print('what is your Mac Address?')
-MAC= input()
+JMAC= input()
 
 
 #print return for the addresses
-print('Your ip address is:' + str(IP) + '   ' + 'Your mac address is:' + str(MAC))
+print('Your ip address is:' + str(JIP) + '   ' + 'Your mac address is:' + str(JMAC))
 
 
 	
