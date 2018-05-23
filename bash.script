@@ -3,7 +3,7 @@
 
 echo What were the main topics in the is lab? 
 
-read -p details
+read details
 
 
 cd ~/mycode \
