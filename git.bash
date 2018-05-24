@@ -3,7 +3,7 @@
 
 echo What were the main topics in the is lab? 
 
-read deatails
+read details
 cd ~/mycode \
 && git add * \
 && git commit -m "$details" \

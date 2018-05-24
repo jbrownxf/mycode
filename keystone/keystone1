@@ -1,0 +1,23 @@
+#!/usr/bin/env python3
+
+loginfail = 0
+loginsuccess = 0
+
+
+keystone_file = open('/home/student/mycode/keystone/keystone.common.wsgi','r')
+
+keystone_file_lines=keystone_file.readlines() #sets the number of lines in the file as a string to be counted later
+ 
+#counts against the number of lines on the file
+for i in range(len(keystone_file_lines)):
+    #if "__" was on line [i] loginfail triggers/adds 1 and line [i] prints to VAR offeneder
+    if "- - - - -] Authorization failed" in keystone_file_lines[i]: 
+        offender = keystone_file_lines[i].split(" ") #takes the line[i], turns it into a lst object, splits by seperates with "_" 
+        print('The IP addresses to firewall are: ' + offender[-1])
+        loginfail += 1 # this is the same as loginfail = loginfail + 1
+        
+    elif "-] Authorization failed" in keystone_file_lines[i]:
+        loginsuccess += 1 #increses loginsuccess by 1 when triggered
+print('The number of failed log in attempts is ' + str(loginfail))
+
+

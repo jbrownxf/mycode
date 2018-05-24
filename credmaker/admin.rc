@@ -1,0 +1,6 @@
+export OS_AUTH_URL=myproject
+export OS_PROJECT_NAME=default
+export OS_PROJECT_DOMAIN_NAME=admin
+export OS_USERNAME=default
+export OS_USER_DOMAIN_NAME=alta3
+export OS_PASSWORD=alta3
