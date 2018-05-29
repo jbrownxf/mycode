@@ -1,0 +1,53 @@
+#!/usr/bin/env python3
+
+
+#This is a board game. Every player rolls a dice from 1-12 first to 100 wins
+#By Josh Brown
+
+from random import randint
+
+#ask for number of players
+num_player = input("How many will be playing Dicequest?(2-6 players) ")
+num_players =int(num_player) + 1  #allows me to start numbering players at 1 instead of 0
+
+
+#ask player name a tie it a player number (for loop)
+dic_player={}  #created a dictionary with player numbers and names
+for x in range(1, int(num_players)):
+    dic_player['Player {0}'.format(x)]= input("What is your player name? ")
+    dic_player['Player {0} Score'.format(x)]= 0
+
+#score variable
+#dic_score={}  #created a dictionary with player score key and value pair
+#for x in range(1, int(num_players)):
+    #dic_score['Player {0} Score'.format(x)]= 0
+
+#Combined dictionaries for player score and name
+#dic_player.update(dic_score)
+print(dic_player)
+
+
+#print(dic_player) #Tried to make a prettier print function
+#for key, value in dic_player:    
+#    print(key + " is " + value)
+
+#dice roll function
+def __init__(self):
+    self.dice = []
+
+def roll(self):
+    self.dice = []
+    self.dice.append(randint(1,12))
+
+def get_dice(self):
+    return self.dice
+
+#loop to allow players to roll dice every turn 
+for i in dic_player:
+    roll()
+    get.dice
+
+#Running total of players location (sum of rolls)
+
+
+#limit of 100 (congradulations, you won)

@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 from cheatdice import Player
 from cheatdice import Cheat_Swapper
 from cheatdice import Cheat_Loaded_Dice

@@ -1,3 +1,4 @@
+#!/usr/binenv python3
 from random import randint
 
 class Player:
