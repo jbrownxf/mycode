@@ -17,4 +17,4 @@ read filename
 mkdir -p "/home/student/mycode/$dirname/" 
 touch "/home/student/mycode/$dirname/$filename" 
 chmod u+x "/home/student/mycode/$dirname/$filename"
-leafpad "/home/student/mycode/$dirname/$filename" &
+atom "/home/student/mycode/$dirname/$filename" &
