@@ -1,0 +1,14 @@
+#!/usr/bin/env python3
+#for loop to login to a router and then to compare and/or configure the routres
+from napalm import get_network_driver
+
+#configfile = o('configuration', 'rb')
+driver = get_network_driver('eos')
+device = driver('172.16.2.20', 'admin', 'alta3') #applies a universal login and pssw
+device.open() #device logon command
+
+#logs = login(fix) #sets each iteration of iplist to logs
+device.load_replace_candidate(filename='/home/student/mycode/configuration')
+print(device.compare_config())
+#device.compare.config(config) #compares config.txt on the machines to t#he one on file
+device.commit_config()

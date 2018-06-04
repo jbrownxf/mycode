@@ -5,29 +5,39 @@
 #imports
 import napalm
 import xlrd
+from napalm import get_network_driver
 
 #Function to get read ip adddresses and login
 iplist = []
-wb = open.workbook(python_practice.xlsx) #opens excel book
+wb = xlrd.open_workbook('/home/student/mycode/python_practice.xlsx') #opens
+# get the first worksheet
+first_sheet = wb.sheet_by_index(0)
 
 def login(ipadd):
 #loop to call all values in row x column 1 of workbook and populate them into list ip.
-for ips in wb.xrows():
-    x = wb.cell(ips,1).value #sets value of row equal to ips and column 1 to variable x
-    iplist.append(x) #adds cell values to list
-    device = ipaddress(login, password) #applies a universal login and psswd
-    device = device.open #device logon command
+    for ips in range(0, first_sheet.nrows):
+        x = first_sheet.col_values(0,1,ips)
+        driver = get_network_driver('eos')
+        device = driver(ips, 'admin', 'alta3') #applies a universal login and pssw
+        device.open #device logon command
+    iplist.extend(x)
+
+login(iplist)
+print(iplist)
+
+user = input('what is your universal login? ')
+password = input("what is the universal password ? ")
 
 
-# for loop to login to a router and then to compare and/or configure the routres
+#for loop to login to a router and then to compare and/or configure the routres
 for fix in iplist:
-    logs = login(fix) #sets each iteration of iplist to logs
-    logs.compare.config(#configuration filename) #compares config.txt on the machines to the one on file
-        if:
-            device_config = fix.get_config()
-            config_file = str(#config filename)
-            device_config = config_file
-        then:
-            login.load_merge_candidate(#configuration filename)
-        else:
-            continue
+    #configfile = o('configuration', 'rb')
+    driver = get_network_driver('eos')
+    device = driver(fix, user, password) #applies a universal login and pssw
+    device.open() #device logon command
+
+    device.load_replace_candidate(filename='/home/student/mycode/configuration') #file path has to be the file you wish to load onto your device
+    print(device.compare_config())
+    #device.compare.config(config) #compares config.txt on the machines to t#he one on file
+    device.commit_config()
+    device.close()
