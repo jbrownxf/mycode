@@ -1,0 +1,33 @@
+#!/usr/bin/env python3
+#by Josh Brown
+# This is a networking script.The point of this script is to read an excel document for IP addresses and ensure the routers associated with the address are using the updated configure file. If not, it will update them.
+
+#imports
+import napalm
+import xlrd
+
+#Function to get read ip adddresses and login
+iplist = []
+wb = open.workbook(python_practice.xlsx) #opens excel book
+
+def login(ipadd):
+#loop to call all values in row x column 1 of workbook and populate them into list ip.
+for ips in wb.xrows():
+    x = wb.cell(ips,1).value #sets value of row equal to ips and column 1 to variable x
+    iplist.append(x) #adds cell values to list
+    device = ipaddress(login, password) #applies a universal login and psswd
+    device = device.open #device logon command
+
+
+# for loop to login to a router and then to compare and/or configure the routres
+for fix in iplist:
+    logs = login(fix) #sets each iteration of iplist to logs
+    logs.compare.config(#configuration filename) #compares config.txt on the machines to the one on file
+        if:
+            device_config = fix.get_config()
+            config_file = str(#config filename)
+            device_config = config_file
+        then:
+            login.load_merge_candidate(#configuration filename)
+        else:
+            continue

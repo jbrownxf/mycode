@@ -1,0 +1,19 @@
+#!/usr/bin/env python3
+#napalm script to edit and save confiuration files of both switches
+#imports
+import napalm
+from napalm import get_network_driver
+
+#function to ssh into switch
+
+def sw_ssh(ipadd)
+    driver = get_network_driver('eos') # napalm needs to talk to switches with EOS OS's
+    device = driver(ipadd, 'admin', 'alta3') #device is variable with switch login creds
+    device.open() # ssh into switch
+
+#edit config
+ipinput = input(which ip address) #set variable to use in function
+sw_ssh(ipinput)
+
+
+#save config
